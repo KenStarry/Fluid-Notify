@@ -1,7 +1,4 @@
-import 'package:fluid_notify/core/presentation/state/fluid_controller.dart';
-import 'package:flutter/material.dart';
-
-import 'fluid_content.dart';
+part of '../../../fluid_notify.dart';
 
 class FluidIslandUI extends StatefulWidget {
   const FluidIslandUI({super.key});

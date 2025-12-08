@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../state/fluid_controller.dart';
+part of '../../../fluid_notify.dart';
 
 /// 4. THE PUBLIC API
 /// A helper class to make calling it cleaner.

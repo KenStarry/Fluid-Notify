@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../../../fluid_notify.dart';
 
 class FluidContent extends StatelessWidget {
   final bool isVisible;

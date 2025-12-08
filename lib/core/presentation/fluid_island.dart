@@ -1,7 +1,4 @@
-import 'package:fluid_notify/core/presentation/state/fluid_controller.dart';
-import 'package:flutter/material.dart';
-
-import 'components/fluid_island_ui.dart';
+part of '../../fluid_notify.dart';
 
 /// 2. THE WRAPPER WIDGET
 /// Wrap your MaterialApp with this.
