@@ -1,8 +1,9 @@
+import 'package:fluid_notify/components/elastic_container.dart';
 import 'package:flutter/material.dart';
 
-import 'core/presentation/state/fluid_controller.dart';
+import 'controller/fluid_controller.dart';
 
-part 'core/presentation/fluid_island.dart';
-part 'core/presentation/classes/fluid.dart';
-part 'core/presentation/components/fluid_content.dart';
-part 'core/presentation/components/fluid_island_ui.dart';
+part 'fluid_island.dart';
+part 'controller/fluid.dart';
+part 'components/fluid_content.dart';
+part 'components/fluid_island_ui.dart';

@@ -1,4 +1,4 @@
-part of '../../../fluid_notify.dart';
+part of '../fluid_notify.dart';
 
 class FluidContent extends StatelessWidget {
   final bool isVisible;
@@ -25,15 +25,19 @@ class FluidContent extends StatelessWidget {
             Icon(icon, color: Colors.greenAccent, size: 24),
             const SizedBox(width: 10),
           ],
-          Text(
-            message,
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 14,
-              decoration: TextDecoration.none,
-              // Crucial for overlay text
-              fontFamily: 'Roboto', // Ensures it looks normal
+          Flexible(
+            child: Text(
+              message,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                decoration: TextDecoration.none,
+                // Crucial for overlay text
+                fontFamily: 'Roboto', // Ensures it looks normal
+              ),
             ),
           ),
         ],

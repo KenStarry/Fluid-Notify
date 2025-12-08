@@ -1,8 +1,8 @@
-part of '../../fluid_notify.dart';
+part of 'fluid_notify.dart';
 
 /// 2. THE WRAPPER WIDGET
 /// Wrap your MaterialApp with this.
-class FluidIsland extends StatelessWidget {
+class FluidIsland extends StatefulWidget {
   final Widget child;
 
   const FluidIsland({super.key, required this.child});
@@ -29,9 +29,28 @@ class FluidIsland extends StatelessWidget {
   }
 
   @override
+  State<FluidIsland> createState() => _FluidIslandState();
+}
+
+class _FluidIslandState extends State<FluidIsland> {
+
+  final FluidController controller = FluidController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    if (controller.overlayLayerVisible && !controller.overlayPortalController.isShowing) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        controller.overlayPortalController.show();
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return OverlayPortal(
-      controller: FluidController().overlayPortalController,
+      controller: controller.overlayPortalController,
       overlayChildBuilder: (context) {
         // This builder is what puts the widget ON TOP of everything
         return const Positioned(
@@ -41,7 +60,7 @@ class FluidIsland extends StatelessWidget {
           child: Center(child: FluidIslandUI()),
         );
       },
-      child: child,
+      child: widget.child,
     );
   }
 }
